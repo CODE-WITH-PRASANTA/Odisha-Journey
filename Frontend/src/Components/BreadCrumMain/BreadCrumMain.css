@@ -1,0 +1,267 @@
+/* =========================================================
+   BreadCrumMain: page header banner
+   Breakpoints: 1400 / 1199 / 991 / 767 / 575 / 380
+   ========================================================= */
+
+.bread-crum-main {
+  /* Design tokens */
+  --bc-navy: #0b2342;
+  --bc-navy-rgb: 11, 35, 66;
+  --bc-yellow: #ffd21f;
+  --bc-orange: #f26a1b;
+  --bc-white: #ffffff;
+
+  --bc-gutter: clamp(16px, 4vw, 48px);   /* side spacing */
+  --bc-min-h: 280px;                     /* default min-height */
+
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+
+  /* Desktop: follow the image proportions so nothing is cropped */
+  aspect-ratio: 1920 / 420;
+  min-height: var(--bc-min-h);
+  max-height: 520px;
+
+  background-color: var(--bc-navy);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Brand accent line at the bottom edge */
+.bread-crum-main::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  z-index: 1;
+  background: linear-gradient(90deg, var(--bc-yellow), var(--bc-orange));
+}
+
+/* Overlay: dark on the left (text side), clear on the right (artwork) */
+.bread-crum-main__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg,
+      rgba(var(--bc-navy-rgb), 0.85) 0%,
+      rgba(var(--bc-navy-rgb), 0.55) 45%,
+      rgba(var(--bc-navy-rgb), 0.15) 75%),
+    linear-gradient(0deg,
+      rgba(var(--bc-navy-rgb), 0.7) 0%,
+      rgba(var(--bc-navy-rgb), 0) 60%);
+}
+
+/* Content: width matches the navbar container so everything lines up */
+.bread-crum-main__content {
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  padding: 0 var(--bc-gutter) clamp(24px, 3.2vw, 48px);
+  color: var(--bc-white);
+  animation: bc-fade-up 0.6s ease both;
+}
+
+/* Title */
+.bread-crum-main__title {
+  position: relative;
+  margin: 0;
+  padding-left: 18px;
+  font-size: clamp(1.75rem, 1.1rem + 3vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.bread-crum-main__title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  bottom: 0.1em;
+  width: 5px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--bc-yellow), var(--bc-orange));
+}
+
+/* Subtitle: kept short so it doesn't run into the artwork text */
+.bread-crum-main__subtitle {
+  margin: 10px 0 0 18px;
+  max-width: 36ch;
+  font-size: clamp(0.92rem, 0.85rem + 0.45vw, 1.12rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Breadcrumb pill */
+.bread-crum-main__nav {
+  margin: clamp(14px, 1.6vw, 20px) 0 0 18px;
+  max-width: calc(100% - 18px);
+}
+
+.bread-crum-main__list {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: 100%;
+  margin: 0;
+  padding: 8px 18px;
+  list-style: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: nowrap;
+  background: rgba(var(--bc-navy-rgb), 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bread-crum-main__item {
+  flex: 0 0 auto;
+}
+
+.bread-crum-main__item + .bread-crum-main__item::before {
+  content: '/';
+  margin: 0 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bread-crum-main__item a {
+  color: var(--bc-white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.bread-crum-main__item a:hover {
+  color: var(--bc-yellow);
+}
+
+.bread-crum-main__item a:focus-visible {
+  outline: 2px solid var(--bc-yellow);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Current page: truncates with "…" if it's too long for the screen */
+.bread-crum-main__item.is-current {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--bc-yellow);
+  font-weight: 700;
+}
+
+/* Entrance animation */
+@keyframes bc-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================= */
+
+/* Max-width 1400px */
+@media screen and (max-width: 1400px) {
+  .bread-crum-main {
+    --bc-min-h: 260px;
+  }
+}
+
+/* Max-width 1199px (Large Laptops / Desktops) */
+@media screen and (max-width: 1199px) {
+  .bread-crum-main {
+    --bc-min-h: 240px;
+  }
+}
+
+/* Max-width 991px (Tablets landscape & small laptops) */
+@media screen and (max-width: 991px) {
+  .bread-crum-main {
+    --bc-min-h: 220px;
+    aspect-ratio: 16 / 9; /* Slightly taller proportion for tablets */
+  }
+  
+  .bread-crum-main__subtitle {
+    max-width: 42ch;
+  }
+}
+
+/* Max-width 767px (Tablets portrait) */
+@media screen and (max-width: 767px) {
+  .bread-crum-main {
+    --bc-min-h: 200px;
+    align-items: flex-end;
+  }
+
+  /* Enhance scrim gradient opacity on mobile for better text contrast */
+  .bread-crum-main__scrim {
+    background:
+      linear-gradient(0deg,
+        rgba(var(--bc-navy-rgb), 0.88) 0%,
+        rgba(var(--bc-navy-rgb), 0.65) 60%,
+        rgba(var(--bc-navy-rgb), 0.35) 100%);
+  }
+
+  .bread-crum-main__title,
+  .bread-crum-main__subtitle,
+  .bread-crum-main__nav {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .bread-crum-main__title::before {
+    display: none; /* Hide vertical accent bar on small screens for cleaner alignment */
+  }
+
+  .bread-crum-main__subtitle {
+    max-width: 100%;
+  }
+}
+
+/* Max-width 575px (Large Phones) */
+@media screen and (max-width: 575px) {
+  .bread-crum-main {
+    --bc-min-h: 180px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .bread-crum-main__list {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Max-width 380px (Compact / Smaller Mobile Devices) */
+@media screen and (max-width: 380px) {
+  .bread-crum-main {
+    --bc-min-h: 160px;
+  }
+
+  .bread-crum-main__content {
+    padding-bottom: 20px;
+  }
+
+  .bread-crum-main__list {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+
+  .bread-crum-main__item + .bread-crum-main__item::before {
+    margin: 0 6px;
+  }
+}
