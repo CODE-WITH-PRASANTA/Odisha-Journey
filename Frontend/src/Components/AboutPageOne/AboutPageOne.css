@@ -1,0 +1,1556 @@
+/* =========================================================
+   ABOUT PAGE ONE
+========================================================= */
+
+.AboutPageOne {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding:
+    105px
+    0
+    115px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #ffffff 62%,
+      #f4faff 100%
+    );
+
+  color: #102f50;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+.AboutPageOne *,
+.AboutPageOne *::before,
+.AboutPageOne *::after {
+  box-sizing: border-box;
+}
+
+
+.AboutPageOne img {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   BACKGROUND SHAPES
+========================================================= */
+
+.AboutPageOne-backgroundShape {
+  position: absolute;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+}
+
+
+.AboutPageOne-backgroundShapeOne {
+  width: 500px;
+  height: 500px;
+
+  right: -300px;
+  top: -200px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      104,
+      25,
+      0.09
+    );
+}
+
+
+.AboutPageOne-backgroundShapeTwo {
+  width: 380px;
+  height: 380px;
+
+  left: -260px;
+  bottom: -220px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        27,
+        139,
+        210,
+        0.07
+      ),
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.AboutPageOne-container {
+  position: relative;
+
+  z-index: 5;
+
+  width:
+    min(
+      1280px,
+      calc(100% - 70px)
+    );
+
+  margin:
+    0
+    auto;
+
+  display: grid;
+
+  grid-template-columns:
+    0.95fr
+    1.05fr;
+
+  align-items: center;
+
+  gap: 85px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.AboutPageOne-content {
+  position: relative;
+
+  opacity: 0;
+
+  transform:
+    translateX(-90px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.AboutPageOne-visible
+.AboutPageOne-content {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.AboutPageOne-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+
+  color: #173e66;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+
+.AboutPageOne-labelLine {
+  width: 32px;
+  height: 3px;
+
+  display: block;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff7a20,
+      #ff5c10
+    );
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.AboutPageOne-title {
+  margin: 0;
+
+  color: #102f50;
+
+  font-size:
+    clamp(
+      42px,
+      4.5vw,
+      64px
+    );
+
+  line-height: 1.02;
+
+  font-weight: 950;
+
+  letter-spacing: -2.7px;
+}
+
+
+.AboutPageOne-title span {
+  color: #ff6819;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.AboutPageOne-intro {
+  margin:
+    25px
+    0
+    0;
+
+  max-width: 700px;
+
+  color: #101010;
+
+  font-size:
+    clamp(
+      19px,
+      1.7vw,
+      27px
+    );
+
+  line-height: 1.45;
+
+  font-weight: 700;
+
+  letter-spacing: -0.4px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.AboutPageOne-description {
+  margin-top: 32px;
+
+  max-width: 690px;
+}
+
+
+.AboutPageOne-description p {
+  margin:
+    0
+    0
+    20px;
+
+  color: #334c64;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+.AboutPageOne-description p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.AboutPageOne-benefits {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 13px;
+
+  max-width: 690px;
+
+  margin-top: 28px;
+}
+
+
+.AboutPageOne-benefit {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    12px
+    13px;
+
+  border:
+    1px solid
+    #e7edf2;
+
+  border-radius: 12px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.78
+    );
+
+  transition:
+    0.3s ease;
+}
+
+
+.AboutPageOne-benefit:hover {
+  border-color:
+    #ffc2a2;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 10px 25px
+    rgba(
+      20,
+      60,
+      90,
+      0.07
+    );
+}
+
+
+.AboutPageOne-benefitIcon {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  color: #ff6819;
+
+  background:
+    #fff1e9;
+
+  font-size: 14px;
+}
+
+
+.AboutPageOne-benefit:nth-child(2)
+.AboutPageOne-benefitIcon {
+  color: #ffffff;
+
+  background:
+    #ff6819;
+}
+
+
+.AboutPageOne-benefit div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.AboutPageOne-benefit strong {
+  color: #153d62;
+
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+
+.AboutPageOne-benefit span {
+  color: #8091a0;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   FOUNDER
+========================================================= */
+
+.AboutPageOne-founder {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 32px;
+}
+
+
+.AboutPageOne-founderSignature {
+  position: relative;
+
+  width: 105px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.AboutPageOne-founderSignature::before {
+  content: "";
+
+  position: absolute;
+
+  left: 3px;
+  right: 3px;
+
+  bottom: 10px;
+
+  height: 1px;
+
+  background:
+    #1c2630;
+
+  transform:
+    rotate(-3deg);
+}
+
+
+.AboutPageOne-founderSignature span {
+  color: #15222d;
+
+  font-family:
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  font-size: 34px;
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  transform:
+    rotate(-7deg);
+}
+
+
+.AboutPageOne-founderInfo {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.AboutPageOne-founderInfo strong {
+  color: #142f4b;
+
+  font-size: 14px;
+
+  font-weight: 900;
+}
+
+
+.AboutPageOne-founderInfo span {
+  color: #7c8b98;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.AboutPageOne-visual {
+  position: relative;
+
+  min-height: 570px;
+
+  opacity: 0;
+
+  transform:
+    translateX(100px);
+
+  transition:
+    opacity 1.1s ease 0.15s,
+    transform 1.1s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.AboutPageOne-visible
+.AboutPageOne-visual {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+
+/* =========================================================
+   VISUAL CIRCLE
+========================================================= */
+
+.AboutPageOne-visualCircle {
+  position: absolute;
+
+  width: 510px;
+  height: 510px;
+
+  right: 5%;
+
+  top: 30px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      105,
+      25,
+      0.16
+    );
+
+  box-shadow:
+    0 0 0 35px
+    rgba(
+      255,
+      105,
+      25,
+      0.025
+    ),
+    0 0 0 70px
+    rgba(
+      255,
+      105,
+      25,
+      0.018
+    );
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.AboutPageOne-mainImage {
+  position: absolute;
+
+  z-index: 2;
+
+  top: 58px;
+  left: 4%;
+
+  width: 57%;
+
+  height: 415px;
+
+  overflow: hidden;
+
+  border-radius:
+    28px
+    28px
+    28px
+    90px;
+
+  border:
+    7px solid
+    #ffffff;
+
+  background: #eaf3f8;
+
+  box-shadow:
+    0 25px 60px
+    rgba(
+      17,
+      52,
+      79,
+      0.17);
+}
+
+
+.AboutPageOne-mainImage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.AboutPageOne-mainImage:hover img {
+  transform:
+    scale(1.06);
+}
+
+
+.AboutPageOne-imageOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(
+        8,
+        33,
+        52,
+        0.28
+      )
+    );
+}
+
+
+/* =========================================================
+   MAIN BADGE
+========================================================= */
+
+.AboutPageOne-mainBadge {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 20px;
+  bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    10px
+    13px;
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  background:
+    rgba(
+      12,
+      48,
+      77,
+      0.91
+    );
+
+  backdrop-filter:
+    blur(10px);
+}
+
+
+.AboutPageOne-mainBadgeIcon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    #ff6819;
+
+  font-size: 11px;
+}
+
+
+.AboutPageOne-mainBadge div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.AboutPageOne-mainBadge strong {
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+
+.AboutPageOne-mainBadge span {
+  color: #bfd0dc;
+
+  font-size: 6px;
+}
+
+
+/* =========================================================
+   SMALL IMAGES
+========================================================= */
+
+.AboutPageOne-smallImage {
+  position: absolute;
+
+  z-index: 4;
+
+  overflow: hidden;
+
+  border:
+    6px solid
+    #ffffff;
+
+  background: #e9f3f8;
+
+  box-shadow:
+    0 18px 40px
+    rgba(
+      16,
+      54,
+      81,
+      0.16
+    );
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.AboutPageOne-smallImage:hover {
+  z-index: 8;
+
+  transform:
+    translateY(-7px)
+    scale(1.02);
+
+  box-shadow:
+    0 25px 50px
+    rgba(
+      16,
+      54,
+      81,
+      0.22
+    );
+}
+
+
+.AboutPageOne-smallImage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.AboutPageOne-smallImageTop {
+  width: 43%;
+
+  height: 235px;
+
+  top: 8px;
+  right: 0;
+
+  border-radius:
+    28px
+    28px
+    28px
+    10px;
+}
+
+
+.AboutPageOne-smallImageBottom {
+  width: 39%;
+
+  height: 210px;
+
+  right: 7%;
+  bottom: 5px;
+
+  border-radius:
+    10px
+    10px
+    28px
+    28px;
+}
+
+
+/* =========================================================
+   SMALL IMAGE ICON
+========================================================= */
+
+.AboutPageOne-smallImageOverlay {
+  position: absolute;
+
+  right: 10px;
+  bottom: 10px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    rgba(
+      9,
+      42,
+      68,
+      0.85
+    );
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.AboutPageOne-quote {
+  position: absolute;
+
+  z-index: 7;
+
+  left: 0;
+
+  bottom: -5px;
+
+  width: 220px;
+
+  padding:
+    17px
+    18px;
+
+  border-radius:
+    15px
+    15px
+    15px
+    4px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7922,
+      #ff5b11
+    );
+
+  box-shadow:
+    0 15px 35px
+    rgba(
+      255,
+      102,
+      23,
+      0.25
+    );
+
+  transform:
+    rotate(-2deg);
+}
+
+
+.AboutPageOne-quote svg {
+  margin-bottom: 8px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.75
+    );
+
+  font-size: 14px;
+}
+
+
+.AboutPageOne-quote p {
+  margin: 0;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   DECORATIVE DOT
+========================================================= */
+
+.AboutPageOne-dot {
+  position: absolute;
+
+  z-index: 8;
+
+  right: -5px;
+  top: 48%;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  background:
+    #79b8fa;
+
+  box-shadow:
+    0 0 0 7px
+    rgba(
+      121,
+      184,
+      250,
+      0.12
+    );
+}
+
+
+/* =========================================================
+   BOTTOM LINE
+========================================================= */
+
+.AboutPageOne-bottomLine {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffcc2f 0%,
+      #ff6819 50%,
+      #0c4f81 100%
+    );
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .AboutPageOne {
+    padding:
+      85px
+      0
+      95px;
+  }
+
+
+  .AboutPageOne-container {
+    width:
+      min(
+        1100px,
+        calc(100% - 45px)
+      );
+
+    gap: 55px;
+  }
+
+
+  .AboutPageOne-title {
+    font-size: 52px;
+  }
+
+
+  .AboutPageOne-intro {
+    font-size: 20px;
+  }
+
+
+  .AboutPageOne-description p {
+    font-size: 12px;
+  }
+
+
+  .AboutPageOne-visual {
+    min-height: 510px;
+  }
+
+
+  .AboutPageOne-mainImage {
+    height: 370px;
+  }
+
+
+  .AboutPageOne-smallImageTop {
+    height: 205px;
+  }
+
+
+  .AboutPageOne-smallImageBottom {
+    height: 180px;
+  }
+
+
+  .AboutPageOne-visualCircle {
+    width: 440px;
+    height: 440px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .AboutPageOne {
+    padding:
+      70px
+      0
+      85px;
+  }
+
+
+  .AboutPageOne-container {
+    grid-template-columns:
+      1fr;
+
+    gap: 65px;
+  }
+
+
+  .AboutPageOne-content {
+    text-align: center;
+  }
+
+
+  .AboutPageOne-label {
+    justify-content: center;
+  }
+
+
+  .AboutPageOne-title {
+    font-size: 55px;
+  }
+
+
+  .AboutPageOne-intro {
+    max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .AboutPageOne-description {
+    max-width: 680px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .AboutPageOne-benefits {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+
+  .AboutPageOne-founder {
+    justify-content: center;
+  }
+
+
+  .AboutPageOne-visual {
+    width: min(
+      650px,
+      100%
+    );
+
+    min-height: 550px;
+
+    margin:
+      0
+      auto;
+  }
+
+
+  .AboutPageOne-mainImage {
+    left: 7%;
+
+    width: 55%;
+
+    height: 410px;
+  }
+
+
+  .AboutPageOne-smallImageTop {
+    width: 43%;
+
+    height: 220px;
+  }
+
+
+  .AboutPageOne-smallImageBottom {
+    width: 39%;
+
+    height: 190px;
+
+    right: 7%;
+  }
+
+
+  .AboutPageOne-visualCircle {
+    right: 4%;
+
+    width: 470px;
+    height: 470px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .AboutPageOne {
+    padding:
+      60px
+      0
+      70px;
+  }
+
+
+  .AboutPageOne-container {
+    width:
+      calc(100% - 28px);
+
+    gap: 45px;
+  }
+
+
+  .AboutPageOne-label {
+    gap: 8px;
+
+    margin-bottom: 13px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.2px;
+  }
+
+
+  .AboutPageOne-labelLine {
+    width: 24px;
+    height: 2px;
+  }
+
+
+  .AboutPageOne-title {
+    font-size: 35px;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .AboutPageOne-intro {
+    margin-top: 17px;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+  }
+
+
+  .AboutPageOne-desktopBreak {
+    display: none;
+  }
+
+
+  .AboutPageOne-description {
+    margin-top: 21px;
+  }
+
+
+  .AboutPageOne-description p {
+    margin-bottom: 13px;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+  }
+
+
+  .AboutPageOne-benefits {
+    grid-template-columns:
+      1fr;
+
+    gap: 7px;
+
+    margin-top: 20px;
+  }
+
+
+  .AboutPageOne-benefit {
+    padding:
+      9px;
+
+    border-radius: 9px;
+  }
+
+
+  .AboutPageOne-benefitIcon {
+    width: 30px;
+    height: 30px;
+
+    font-size: 11px;
+  }
+
+
+  .AboutPageOne-benefit strong {
+    font-size: 8px;
+  }
+
+
+  .AboutPageOne-benefit span {
+    font-size: 6px;
+  }
+
+
+  .AboutPageOne-founder {
+    margin-top: 22px;
+  }
+
+
+  .AboutPageOne-founderSignature {
+    width: 75px;
+    height: 40px;
+  }
+
+
+  .AboutPageOne-founderSignature span {
+    font-size: 27px;
+  }
+
+
+  .AboutPageOne-founderInfo strong {
+    font-size: 10px;
+  }
+
+
+  .AboutPageOne-founderInfo span {
+    font-size: 7px;
+  }
+
+
+  /* VISUAL */
+
+  .AboutPageOne-visual {
+    min-height: 380px;
+
+    width: 100%;
+  }
+
+
+  .AboutPageOne-visualCircle {
+    width: 300px;
+    height: 300px;
+
+    right: 0;
+
+    top: 40px;
+  }
+
+
+  .AboutPageOne-mainImage {
+    top: 55px;
+    left: 3%;
+
+    width: 58%;
+
+    height: 265px;
+
+    border-width: 4px;
+
+    border-radius:
+      18px
+      18px
+      18px
+      55px;
+  }
+
+
+  .AboutPageOne-smallImageTop {
+    top: 15px;
+    right: 0;
+
+    width: 42%;
+
+    height: 150px;
+
+    border-width: 4px;
+
+    border-radius:
+      17px
+      17px
+      17px
+      7px;
+  }
+
+
+  .AboutPageOne-smallImageBottom {
+    right: 4%;
+    bottom: 20px;
+
+    width: 39%;
+
+    height: 135px;
+
+    border-width: 4px;
+
+    border-radius:
+      7px
+      7px
+      17px
+      17px;
+  }
+
+
+  .AboutPageOne-mainBadge {
+    left: 10px;
+    bottom: 10px;
+
+    padding:
+      7px
+      9px;
+
+    border-radius: 8px;
+  }
+
+
+  .AboutPageOne-mainBadgeIcon {
+    width: 24px;
+    height: 24px;
+
+    font-size: 8px;
+  }
+
+
+  .AboutPageOne-mainBadge strong {
+    font-size: 6px;
+  }
+
+
+  .AboutPageOne-mainBadge span {
+    font-size: 4.5px;
+  }
+
+
+  .AboutPageOne-smallImageOverlay {
+    width: 23px;
+    height: 23px;
+
+    right: 5px;
+    bottom: 5px;
+
+    font-size: 7px;
+  }
+
+
+  .AboutPageOne-quote {
+    left: 0;
+    bottom: 0;
+
+    width: 150px;
+
+    padding:
+      11px
+      12px;
+
+    border-radius: 10px;
+  }
+
+
+  .AboutPageOne-quote svg {
+    margin-bottom: 5px;
+
+    font-size: 9px;
+  }
+
+
+  .AboutPageOne-quote p {
+    font-size: 6px;
+  }
+
+
+  .AboutPageOne-dot {
+    width: 10px;
+    height: 10px;
+
+    right: -2px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .AboutPageOne {
+    padding:
+      50px
+      0
+      60px;
+  }
+
+
+  .AboutPageOne-title {
+    font-size: 31px;
+  }
+
+
+  .AboutPageOne-intro {
+    font-size: 13px;
+  }
+
+
+  .AboutPageOne-description p {
+    font-size: 8px;
+  }
+
+
+  .AboutPageOne-visual {
+    min-height: 330px;
+  }
+
+
+  .AboutPageOne-mainImage {
+    height: 230px;
+  }
+
+
+  .AboutPageOne-smallImageTop {
+    height: 130px;
+  }
+
+
+  .AboutPageOne-smallImageBottom {
+    height: 115px;
+  }
+
+
+  .AboutPageOne-quote {
+    width: 135px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .AboutPageOne-content,
+  .AboutPageOne-visual {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .AboutPageOne *,
+  .AboutPageOne *::before,
+  .AboutPageOne *::after {
+    animation: none !important;
+
+    transition:
+      none !important;
+  }
+
+}

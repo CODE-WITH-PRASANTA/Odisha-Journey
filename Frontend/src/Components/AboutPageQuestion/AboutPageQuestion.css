@@ -1,0 +1,743 @@
+/* =========================================================
+   ABOUT PAGE QUESTION
+========================================================= */
+
+.AboutPageQuestion {
+  width: 100%;
+  position: relative;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  overflow: hidden;
+
+  font-family:
+    Inter,
+    "Poppins",
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.AboutPageQuestion-container {
+  width: min(1000px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 78px 0 100px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.AboutPageQuestion-header {
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+
+.AboutPageQuestion-smallLabel {
+  display: inline-block;
+
+  margin-bottom: 13px;
+
+  color: #2787ee;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.AboutPageQuestion-title {
+  margin: 0;
+
+  color: #101010;
+
+  font-size: clamp(38px, 4vw, 55px);
+
+  line-height: 1.08;
+
+  font-weight: 850;
+
+  letter-spacing: -1.8px;
+}
+
+
+.AboutPageQuestion-subtitle {
+  margin: 20px auto 0;
+
+  max-width: 720px;
+
+  color: #40536a;
+
+  font-size: 18px;
+
+  line-height: 1.65;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   FAQ LIST
+========================================================= */
+
+.AboutPageQuestion-list {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 27px;
+}
+
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+.AboutPageQuestion-item {
+  width: 100%;
+
+  border: 1px solid transparent;
+
+  border-radius: 11px;
+
+  background: #f0f0f0;
+
+  overflow: hidden;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.AboutPageQuestion-item:hover {
+  background: #ededed;
+}
+
+
+.AboutPageQuestion-itemActive {
+  border-color: #2587f2;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 25px
+    rgba(37, 135, 242, 0.05);
+}
+
+
+/* =========================================================
+   QUESTION BUTTON
+========================================================= */
+
+.AboutPageQuestion-question {
+  width: 100%;
+
+  min-height: 73px;
+
+  padding: 0 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #111111;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   QUESTION TEXT
+========================================================= */
+
+.AboutPageQuestion-questionText {
+  font-size: 20px;
+
+  line-height: 1.4;
+
+  font-weight: 750;
+
+  letter-spacing: -0.25px;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.AboutPageQuestion-arrow {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.AboutPageQuestion-arrow::before {
+  content: "";
+
+  width: 0;
+  height: 0;
+
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+
+  border-top: 7px solid #5d5d5d;
+
+  transition:
+    border-color 0.3s ease;
+}
+
+
+.AboutPageQuestion-arrowActive {
+  transform: rotate(180deg);
+}
+
+
+.AboutPageQuestion-arrowActive::before {
+  border-top-color: #2385ef;
+}
+
+
+/* =========================================================
+   ANSWER WRAPPER
+========================================================= */
+
+.AboutPageQuestion-answerWrapper {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  transition:
+    grid-template-rows 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.AboutPageQuestion-answerWrapperActive {
+  grid-template-rows: 1fr;
+}
+
+
+.AboutPageQuestion-answer {
+  min-height: 0;
+
+  overflow: hidden;
+
+  padding:
+    0 35px;
+
+  color: #40536a;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  opacity: 0;
+
+  transform:
+    translateY(-8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s ease,
+    padding 0.4s ease;
+}
+
+
+.AboutPageQuestion-answerWrapperActive
+.AboutPageQuestion-answer {
+  padding:
+    0 35px 25px;
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+.AboutPageQuestion-answer strong {
+  color: #111111;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   DESKTOP LARGE
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .AboutPageQuestion-container {
+    width: min(1000px, calc(100% - 60px));
+
+    padding-top: 82px;
+  }
+
+
+  .AboutPageQuestion-list {
+    gap: 28px;
+  }
+
+
+  .AboutPageQuestion-question {
+    min-height: 75px;
+  }
+
+
+  .AboutPageQuestion-statsContainer {
+    min-height: 160px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .AboutPageQuestion-container {
+    width:
+      calc(100% - 50px);
+
+    padding:
+      70px 0 80px;
+  }
+
+
+  .AboutPageQuestion-title {
+    font-size:
+      45px;
+  }
+
+
+  .AboutPageQuestion-subtitle {
+    font-size:
+      16px;
+  }
+
+
+  .AboutPageQuestion-question {
+    padding:
+      0 27px;
+  }
+
+
+  .AboutPageQuestion-questionText {
+    font-size:
+      18px;
+  }
+
+
+  .AboutPageQuestion-answer {
+    padding-left:
+      27px;
+
+    padding-right:
+      27px;
+
+    font-size:
+      16px;
+  }
+
+
+  .AboutPageQuestion-answerWrapperActive
+  .AboutPageQuestion-answer {
+    padding:
+      0 27px 23px;
+  }
+
+
+  .AboutPageQuestion-statsContainer {
+    width:
+      calc(100% - 35px);
+
+    grid-template-columns:
+      1fr 1fr;
+
+    padding:
+      20px 0;
+  }
+
+
+  .AboutPageQuestion-statDivider {
+    display:
+      none;
+  }
+
+
+  .AboutPageQuestion-stat {
+    min-height:
+      100px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .AboutPageQuestion-container {
+    width:
+      calc(100% - 28px);
+
+    padding:
+      60px 0 65px;
+  }
+
+
+  .AboutPageQuestion-header {
+    margin-bottom:
+      38px;
+  }
+
+
+  .AboutPageQuestion-smallLabel {
+    font-size:
+      8px;
+
+    letter-spacing:
+      1.5px;
+  }
+
+
+  .AboutPageQuestion-title {
+    font-size:
+      34px;
+
+    letter-spacing:
+      -1px;
+  }
+
+
+  .AboutPageQuestion-subtitle {
+    margin-top:
+      15px;
+
+    font-size:
+      13px;
+
+    line-height:
+      1.6;
+  }
+
+
+  .AboutPageQuestion-desktopBreak {
+    display:
+      none;
+  }
+
+
+  .AboutPageQuestion-list {
+    gap:
+      13px;
+  }
+
+
+  .AboutPageQuestion-item {
+    border-radius:
+      10px;
+  }
+
+
+  .AboutPageQuestion-question {
+    min-height:
+      65px;
+
+    padding:
+      0 19px;
+
+    gap:
+      15px;
+  }
+
+
+  .AboutPageQuestion-questionText {
+    font-size:
+      15px;
+
+    line-height:
+      1.45;
+  }
+
+
+  .AboutPageQuestion-arrow {
+    width:
+      24px;
+
+    height:
+      24px;
+  }
+
+
+  .AboutPageQuestion-arrow::before {
+    border-left-width:
+      5px;
+
+    border-right-width:
+      5px;
+
+    border-top-width:
+      6px;
+  }
+
+
+  .AboutPageQuestion-answer {
+    padding:
+      0 19px;
+
+    font-size:
+      13px;
+
+    line-height:
+      1.65;
+  }
+
+
+  .AboutPageQuestion-answerWrapperActive
+  .AboutPageQuestion-answer {
+    padding:
+      0 19px 21px;
+  }
+
+
+  /* STATS */
+
+  .AboutPageQuestion-statsContainer {
+    width:
+      calc(100% - 25px);
+
+    grid-template-columns:
+      1fr 1fr;
+
+    padding:
+      12px 0;
+  }
+
+
+  .AboutPageQuestion-stat {
+    min-height:
+      105px;
+
+    padding:
+      15px 10px;
+
+    gap:
+      10px;
+
+    justify-content:
+      flex-start;
+  }
+
+
+  .AboutPageQuestion-statIconShape {
+    width:
+      39px;
+
+    height:
+      39px;
+
+    font-size:
+      24px;
+  }
+
+
+  .AboutPageQuestion-statContent strong {
+    font-size:
+      25px;
+  }
+
+
+  .AboutPageQuestion-statContent span {
+    font-size:
+      11px;
+
+    line-height:
+      1.35;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .AboutPageQuestion-container {
+    width:
+      calc(100% - 20px);
+
+    padding:
+      50px 0 55px;
+  }
+
+
+  .AboutPageQuestion-title {
+    font-size:
+      29px;
+  }
+
+
+  .AboutPageQuestion-subtitle {
+    font-size:
+      12px;
+  }
+
+
+  .AboutPageQuestion-question {
+    min-height:
+      61px;
+
+    padding:
+      0 16px;
+  }
+
+
+  .AboutPageQuestion-questionText {
+    font-size:
+      13px;
+  }
+
+
+  .AboutPageQuestion-answer {
+    padding:
+      0 16px;
+
+    font-size:
+      12px;
+  }
+
+
+  .AboutPageQuestion-answerWrapperActive
+  .AboutPageQuestion-answer {
+    padding:
+      0 16px 18px;
+  }
+
+
+  .AboutPageQuestion-statsContainer {
+    width:
+      calc(100% - 12px);
+  }
+
+
+  .AboutPageQuestion-stat {
+    min-height:
+      92px;
+
+    padding:
+      12px 5px;
+
+    gap:
+      7px;
+  }
+
+
+  .AboutPageQuestion-statIconShape {
+    width:
+      34px;
+
+    height:
+      34px;
+
+    font-size:
+      20px;
+  }
+
+
+  .AboutPageQuestion-statContent strong {
+    font-size:
+      21px;
+  }
+
+
+  .AboutPageQuestion-statContent span {
+    font-size:
+      9px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.AboutPageQuestion-question:focus-visible {
+  outline:
+    2px solid #2385ef;
+
+  outline-offset:
+    -3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .AboutPageQuestion *,
+  .AboutPageQuestion *::before,
+  .AboutPageQuestion *::after {
+    transition:
+      none !important;
+  }
+
+}

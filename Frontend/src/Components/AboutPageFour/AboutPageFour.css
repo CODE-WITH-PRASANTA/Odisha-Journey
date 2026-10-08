@@ -1,0 +1,2264 @@
+/* =========================================================
+   ABOUT PAGE FOUR
+========================================================= */
+
+.AboutPageFour {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 95px 0 90px;
+  background: #ffffff;
+  color: #111111;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+
+.AboutPageFour *,
+.AboutPageFour *::before,
+.AboutPageFour *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.AboutPageFour-backgroundGlow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+
+.AboutPageFour-backgroundGlowOne {
+  width: 500px;
+  height: 500px;
+  left: -330px;
+  top: 150px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(220, 248, 125, 0.18),
+      transparent 70%
+    );
+}
+
+
+.AboutPageFour-backgroundGlowTwo {
+  width: 550px;
+  height: 550px;
+  right: -350px;
+  bottom: 150px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(94, 198, 255, 0.12),
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.AboutPageFour-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(
+    1420px,
+    calc(100% - 70px)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.AboutPageFour-header {
+  text-align: center;
+  margin-bottom: 58px;
+}
+
+
+.AboutPageFour-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin-bottom: 16px;
+
+  color: #173c5e;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+
+.AboutPageFour-eyebrowLine {
+  width: 30px;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffb82d,
+      #ff641c
+    );
+}
+
+
+.AboutPageFour-title {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: clamp(
+    42px,
+    4vw,
+    58px
+  );
+
+  line-height: 1.05;
+  letter-spacing: -2px;
+  font-weight: 900;
+}
+
+
+.AboutPageFour-subtitle {
+  width: min(650px, 100%);
+
+  margin: 20px auto 0;
+
+  color: #506174;
+
+  font-size: clamp(
+    15px,
+    1.3vw,
+    19px
+  );
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.AboutPageFour-features {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.AboutPageFour-card {
+  position: relative;
+
+  min-height: 250px;
+
+  overflow: hidden;
+
+  padding: 43px 32px 31px;
+
+  border: 1px solid
+    rgba(0, 0, 0, 0.025);
+
+  border-radius: 23px;
+
+  cursor: pointer;
+
+  isolation: isolate;
+
+  transition:
+    transform 0.45s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    box-shadow 0.45s ease;
+}
+
+
+/* =========================================================
+   CARD COLORS
+========================================================= */
+
+.AboutPageFour-card-green {
+  background: #e6f8a8;
+}
+
+
+.AboutPageFour-card-gray {
+  background: #f0f0f0;
+}
+
+
+.AboutPageFour-card-purple {
+  background: #e3e2ff;
+}
+
+
+.AboutPageFour-card-mint {
+  background: #bcefd2;
+}
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.AboutPageFour-cardGlow {
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  right: -90px;
+  bottom: -90px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+
+  opacity: 0;
+
+  transform: scale(0.5);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.55s ease;
+
+  z-index: -1;
+}
+
+
+.AboutPageFour-card:hover {
+  transform:
+    translateY(-10px);
+
+  box-shadow:
+    0 25px 55px
+    rgba(
+      20,
+      40,
+      60,
+      0.13
+    );
+}
+
+
+.AboutPageFour-card:hover
+.AboutPageFour-cardGlow {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.AboutPageFour-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 28px;
+}
+
+
+.AboutPageFour-iconInner {
+  color: #111111;
+
+  font-size: 39px;
+
+  transition:
+    transform 0.4s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+
+.AboutPageFour-card:hover
+.AboutPageFour-iconInner {
+  transform:
+    translateY(-5px)
+    rotate(-5deg)
+    scale(1.08);
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.AboutPageFour-cardTitle {
+  margin: 0;
+
+  color: #101010;
+
+  font-size:
+    clamp(
+      19px,
+      1.55vw,
+      24px
+    );
+
+  line-height: 1.45;
+  font-weight: 800;
+}
+
+
+.AboutPageFour-cardDescription {
+  max-width: 290px;
+
+  margin: 12px 0 0;
+
+  color:
+    rgba(
+      17,
+      17,
+      17,
+      0.68
+    );
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  opacity: 0;
+
+  transform:
+    translateY(8px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.AboutPageFour-card:hover
+.AboutPageFour-cardDescription {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   CARD ARROW
+========================================================= */
+
+.AboutPageFour-cardArrow {
+  position: absolute;
+
+  right: 27px;
+  bottom: 25px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: #111111;
+
+  font-size: 13px;
+
+  opacity: 0;
+
+  transform:
+    translateX(-10px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.AboutPageFour-card:hover
+.AboutPageFour-cardArrow {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+
+/* =========================================================
+   TRUST TITLE
+========================================================= */
+
+.AboutPageFour-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin:
+    105px 0 35px;
+}
+
+
+.AboutPageFour-trustLine {
+  width: 65px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #d8dfe5
+    );
+}
+
+
+.AboutPageFour-trustLine:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      #d8dfe5,
+      transparent
+    );
+}
+
+
+.AboutPageFour-trustTitle {
+  margin: 0;
+
+  color: #445567;
+
+  font-size:
+    clamp(
+      18px,
+      1.5vw,
+      23px
+    );
+
+  font-weight: 750;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LOGO MARQUEE
+========================================================= */
+
+.AboutPageFour-marquee {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 12px 0 22px;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      black 7%,
+      black 93%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      black 7%,
+      black 93%,
+      transparent 100%
+    );
+}
+
+
+.AboutPageFour-marqueeTrack {
+  display: flex;
+
+  width: max-content;
+
+  align-items: center;
+
+  animation:
+    AboutPageFourLogoMove
+    27s
+    linear
+    infinite;
+
+  will-change:
+    transform;
+}
+
+
+@keyframes AboutPageFourLogoMove {
+
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%);
+  }
+
+}
+
+
+.AboutPageFour-marquee:hover
+.AboutPageFour-marqueeTrack {
+  animation-play-state:
+    paused;
+}
+
+
+/* =========================================================
+   LOGOS
+========================================================= */
+
+.AboutPageFour-logoWrapper {
+  flex-shrink: 0;
+
+  min-width: 215px;
+
+  padding: 0 27px;
+}
+
+
+.AboutPageFour-logo {
+  min-height: 76px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  padding: 12px 17px;
+
+  border-radius: 15px;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+
+.AboutPageFour-logoWrapper:hover
+.AboutPageFour-logo {
+  transform:
+    translateY(-7px)
+    scale(1.04);
+
+  filter:
+    drop-shadow(
+      0 12px 15px
+      rgba(
+        20,
+        40,
+        60,
+        0.12
+      )
+    );
+}
+
+
+.AboutPageFour-logoText {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+
+.AboutPageFour-logoText strong {
+  color: #20252b;
+
+  font-size: 21px;
+
+  font-weight: 900;
+}
+
+
+.AboutPageFour-logoText strong span {
+  color: #2776ef;
+}
+
+
+.AboutPageFour-logoText small {
+  margin-top: 6px;
+
+  color: #727c87;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   LOGO 1
+========================================================= */
+
+.AboutPageFour-logoIcon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  color: #2878ef;
+
+  background:
+    rgba(
+      40,
+      120,
+      239,
+      0.08
+    );
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   LOGO 2
+========================================================= */
+
+.AboutPageFour-borcelleSymbol {
+  color: #e31f26;
+
+  font-size: 36px;
+
+  transform:
+    rotate(-15deg);
+}
+
+
+.AboutPageFour-logo-borcelle
+.AboutPageFour-logoText strong {
+  color: #d92127;
+
+  font-family:
+    Georgia,
+    serif;
+}
+
+
+/* =========================================================
+   LOGO 3
+========================================================= */
+
+.AboutPageFour-gotripIcon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #1478c8;
+
+  border: 3px solid #1478c8;
+
+  font-size: 22px;
+}
+
+
+.AboutPageFour-logo-gotrip
+.AboutPageFour-logoText strong {
+  color: #111111;
+}
+
+
+/* =========================================================
+   LOGO 4
+========================================================= */
+
+.AboutPageFour-travelLogo {
+  position: relative;
+
+  color: #258fd4;
+
+  font-size: 34px;
+
+  font-weight: 900;
+
+  font-style: italic;
+
+  letter-spacing: -2px;
+}
+
+
+.AboutPageFour-travelLogo span {
+  position: absolute;
+
+  right: -5px;
+  top: -14px;
+
+  color: #2187f3;
+
+  font-size: 19px;
+
+  transform:
+    rotate(-15deg);
+}
+
+
+/* =========================================================
+   LOGO 5
+========================================================= */
+
+.AboutPageFour-gflyIcon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #0a9a69;
+
+  font-size: 37px;
+}
+
+
+.AboutPageFour-logo-gfly
+.AboutPageFour-logoText strong {
+  color: #008d62;
+}
+
+
+/* =========================================================
+   LOGO 6
+========================================================= */
+
+.AboutPageFour-traverseLogo {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  color: #525b91;
+
+  font-style: italic;
+}
+
+
+.AboutPageFour-traverseLogo strong {
+  font-size: 25px;
+
+  letter-spacing: 1px;
+}
+
+
+.AboutPageFour-traverseLogo small {
+  margin-top: 4px;
+
+  color: #7c8290;
+
+  font-size: 6px;
+
+  font-style: normal;
+
+  letter-spacing: 0.6px;
+}
+
+
+/* =========================================================
+   TRUST FOOTER
+========================================================= */
+
+.AboutPageFour-trustFooter {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  margin-top: 15px;
+
+  color: #9aa5af;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+.AboutPageFour-trustDot {
+  width: 4px;
+  height: 4px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ff701f;
+}
+
+
+/* =========================================================
+   YOUTUBE SECTION
+========================================================= */
+
+.AboutPageFour-youtube {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    0.78fr 1.22fr;
+
+  gap: 60px;
+
+  align-items: center;
+
+  margin-top: 75px;
+
+  padding: 58px;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #082d53 0%,
+      #103f6b 55%,
+      #082846 100%
+    );
+
+  box-shadow:
+    0 30px 70px
+    rgba(
+      13,
+      49,
+      82,
+      0.18
+    );
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   YOUTUBE BACKGROUND DECORATION
+========================================================= */
+
+.AboutPageFour-youtube::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -250px;
+  top: -300px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  box-shadow:
+    0 0 0 55px
+      rgba(
+        255,
+        255,
+        255,
+        0.025
+      ),
+    0 0 0 110px
+      rgba(
+        255,
+        255,
+        255,
+        0.018
+      );
+
+  z-index: -1;
+}
+
+
+.AboutPageFour-youtube::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  left: -250px;
+  bottom: -320px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        255,
+        108,
+        28,
+        0.18
+      ),
+      transparent 70%
+    );
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   YOUTUBE CONTENT
+========================================================= */
+
+.AboutPageFour-youtubeContent {
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   YOUTUBE EYEBROW
+========================================================= */
+
+.AboutPageFour-youtubeEyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 17px;
+
+  color: #ff7a2a;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+.AboutPageFour-youtubeLine {
+  width: 30px;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: #ff7424;
+}
+
+
+/* =========================================================
+   YOUTUBE TITLE
+========================================================= */
+
+.AboutPageFour-youtubeTitle {
+  max-width: 560px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      35px,
+      3.5vw,
+      55px
+    );
+
+  line-height: 1.06;
+
+  letter-spacing: -1.8px;
+
+  font-weight: 900;
+}
+
+
+.AboutPageFour-youtubeTitle span {
+  color: #ff7024;
+}
+
+
+/* =========================================================
+   YOUTUBE DESCRIPTION
+========================================================= */
+
+.AboutPageFour-youtubeDescription {
+  max-width: 530px;
+
+  margin:
+    22px 0 30px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   YOUTUBE BUTTON
+========================================================= */
+
+.AboutPageFour-youtubeButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  height: 58px;
+
+  padding:
+    5px 22px 5px 6px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7627,
+      #ff5c15
+    );
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 15px 35px
+    rgba(
+      255,
+      95,
+      24,
+      0.28
+    );
+
+  transition:
+    transform 0.4s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    box-shadow 0.4s ease;
+}
+
+
+.AboutPageFour-youtubeButton:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 20px 42px
+    rgba(
+      255,
+      95,
+      24,
+      0.4
+    );
+}
+
+
+/* =========================================================
+   BUTTON ICON
+========================================================= */
+
+.AboutPageFour-youtubeButtonIcon {
+  width: 47px;
+  height: 47px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ff2929;
+
+  background: #ffffff;
+
+  font-size: 20px;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.AboutPageFour-youtubeButton:hover
+.AboutPageFour-youtubeButtonIcon {
+  transform:
+    scale(1.08)
+    rotate(-5deg);
+}
+
+
+.AboutPageFour-youtubeButtonArrow {
+  margin-left: 4px;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+.AboutPageFour-youtubeButton:hover
+.AboutPageFour-youtubeButtonArrow {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.AboutPageFour-youtubeVideo {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 410px;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  background: #071c31;
+
+  box-shadow:
+    0 22px 55px
+    rgba(
+      0,
+      0,
+      0,
+      0.25
+    );
+
+  transform:
+    translateZ(0);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.AboutPageFour-youtubeImage {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.8s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    filter 0.6s ease;
+}
+
+
+.AboutPageFour-youtubeVideo:hover
+.AboutPageFour-youtubeImage {
+  transform:
+    scale(1.055);
+
+  filter:
+    brightness(0.9);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.AboutPageFour-youtubeOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(
+        3,
+        18,
+        34,
+        0.02
+      ) 15%,
+      rgba(
+        3,
+        18,
+        34,
+        0.12
+      ) 50%,
+      rgba(
+        3,
+        18,
+        34,
+        0.8
+      ) 100%
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.AboutPageFour-youtubePlay {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  width: 94px;
+  height: 94px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition:
+    transform 0.4s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+
+.AboutPageFour-youtubePlay::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -13px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+
+  border-radius: 50%;
+
+  animation:
+    AboutPageFourPulse
+    2.2s
+    ease-out
+    infinite;
+}
+
+
+@keyframes AboutPageFourPulse {
+
+  0% {
+    transform: scale(0.92);
+    opacity: 0.9;
+  }
+
+  70% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+
+}
+
+
+.AboutPageFour-youtubePlay:hover {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    scale(1.12);
+}
+
+
+.AboutPageFour-youtubePlayOuter {
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      112,
+      29,
+      0.95
+    );
+
+  box-shadow:
+    0 12px 35px
+    rgba(
+      255,
+      89,
+      20,
+      0.45
+    );
+}
+
+
+.AboutPageFour-youtubePlayInner {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ff671d;
+
+  background: #ffffff;
+
+  font-size: 15px;
+
+  padding-left: 3px;
+}
+
+
+/* =========================================================
+   VIDEO BADGE
+========================================================= */
+
+.AboutPageFour-youtubeBadge {
+  position: absolute;
+
+  left: 22px;
+  top: 22px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    9px 13px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.22
+    );
+
+  border-radius: 30px;
+
+  color: #ffffff;
+
+  background:
+    rgba(
+      4,
+      28,
+      52,
+      0.45
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+
+  z-index: 4;
+}
+
+
+.AboutPageFour-youtubeBadge svg {
+  color: #ff3737;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   VIDEO CORNERS
+========================================================= */
+
+.AboutPageFour-youtubeCorner {
+  position: absolute;
+
+  width: 45px;
+  height: 45px;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+
+.AboutPageFour-youtubeCornerOne {
+  right: 22px;
+  top: 22px;
+
+  border-top:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  border-right:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  border-top-right-radius: 12px;
+}
+
+
+.AboutPageFour-youtubeCornerTwo {
+  left: 22px;
+  bottom: 22px;
+
+  border-left:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  border-bottom:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  border-bottom-left-radius: 12px;
+}
+
+
+/* =========================================================
+   VIDEO BOTTOM
+========================================================= */
+
+.AboutPageFour-youtubeBottom {
+  position: absolute;
+
+  left: 24px;
+  right: 24px;
+  bottom: 20px;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  z-index: 4;
+}
+
+
+.AboutPageFour-youtubeBottom > div:first-child {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.AboutPageFour-youtubeBottom strong {
+  color: #ffffff;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+
+.AboutPageFour-youtubeBottom span {
+  margin-top: 5px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.68
+    );
+
+  font-size: 10px;
+}
+
+
+.AboutPageFour-youtubeWatch {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    9px 13px;
+
+  border-radius: 30px;
+
+  color: #ffffff;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+}
+
+
+.AboutPageFour-youtubeWatch svg {
+  color: #ff7224;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .AboutPageFour-container {
+    width:
+      calc(100% - 50px);
+  }
+
+
+  .AboutPageFour-features {
+    gap: 18px;
+  }
+
+
+  .AboutPageFour-card {
+    padding:
+      34px 25px 28px;
+  }
+
+
+  .AboutPageFour-youtube {
+    grid-template-columns:
+      1fr;
+
+    gap: 40px;
+
+    padding:
+      45px;
+  }
+
+
+  .AboutPageFour-youtubeContent {
+    max-width: 700px;
+  }
+
+
+  .AboutPageFour-youtubeVideo {
+    min-height:
+      440px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .AboutPageFour {
+    padding:
+      75px 0 65px;
+  }
+
+
+  .AboutPageFour-container {
+    width:
+      calc(100% - 36px);
+  }
+
+
+  .AboutPageFour-title {
+    font-size:
+      42px;
+  }
+
+
+  .AboutPageFour-features {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 18px;
+  }
+
+
+  .AboutPageFour-cardDescription {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+
+  .AboutPageFour-cardArrow {
+    opacity: 0.8;
+
+    transform:
+      translateX(0);
+  }
+
+
+  .AboutPageFour-trust {
+    margin-top:
+      75px;
+  }
+
+
+  .AboutPageFour-logoWrapper {
+    min-width:
+      180px;
+  }
+
+
+  .AboutPageFour-youtube {
+    margin-top:
+      60px;
+
+    padding:
+      38px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .AboutPageFour {
+    padding:
+      58px 0 45px;
+  }
+
+
+  .AboutPageFour-container {
+    width:
+      calc(100% - 24px);
+  }
+
+
+  .AboutPageFour-eyebrow {
+    font-size:
+      8px;
+
+    letter-spacing:
+      1.3px;
+  }
+
+
+  .AboutPageFour-title {
+    font-size:
+      32px;
+
+    letter-spacing:
+      -1.2px;
+  }
+
+
+  .AboutPageFour-subtitle {
+    margin-top:
+      14px;
+
+    font-size:
+      11px;
+  }
+
+
+  .AboutPageFour-features {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      13px;
+  }
+
+
+  .AboutPageFour-card {
+    min-height:
+      185px;
+
+    padding:
+      28px 23px;
+  }
+
+
+  .AboutPageFour-icon {
+    width:
+      42px;
+
+    height:
+      42px;
+
+    margin-bottom:
+      18px;
+  }
+
+
+  .AboutPageFour-iconInner {
+    font-size:
+      30px;
+  }
+
+
+  .AboutPageFour-cardTitle {
+    font-size:
+      18px;
+  }
+
+
+  .AboutPageFour-cardDescription {
+    max-width:
+      100%;
+
+    margin-top:
+      7px;
+
+    font-size:
+      10px;
+  }
+
+
+  .AboutPageFour-cardArrow {
+    width:
+      32px;
+
+    height:
+      32px;
+
+    right:
+      19px;
+
+    bottom:
+      19px;
+  }
+
+
+  .AboutPageFour-trust {
+    gap:
+      10px;
+
+    margin:
+      55px 0 20px;
+  }
+
+
+  .AboutPageFour-trustLine {
+    width:
+      25px;
+  }
+
+
+  .AboutPageFour-trustTitle {
+    font-size:
+      14px;
+  }
+
+
+  .AboutPageFour-logoWrapper {
+    min-width:
+      165px;
+
+    padding:
+      0 12px;
+  }
+
+
+  .AboutPageFour-logo {
+    min-height:
+      65px;
+  }
+
+
+  .AboutPageFour-logoText strong {
+    font-size:
+      17px;
+  }
+
+
+  .AboutPageFour-logoText small {
+    font-size:
+      7px;
+  }
+
+
+  .AboutPageFour-trustFooter {
+    flex-wrap:
+      wrap;
+
+    font-size:
+      8px;
+
+    gap:
+      7px;
+  }
+
+
+  /* =======================================================
+     YOUTUBE MOBILE
+  ======================================================= */
+
+  .AboutPageFour-youtube {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      30px;
+
+    margin-top:
+      45px;
+
+    padding:
+      27px 20px 20px;
+
+    border-radius:
+      23px;
+  }
+
+
+  .AboutPageFour-youtubeEyebrow {
+    font-size:
+      8px;
+
+    letter-spacing:
+      1.5px;
+  }
+
+
+  .AboutPageFour-youtubeLine {
+    width:
+      22px;
+  }
+
+
+  .AboutPageFour-youtubeTitle {
+    font-size:
+      31px;
+
+    letter-spacing:
+      -1px;
+  }
+
+
+  .AboutPageFour-youtubeDescription {
+    margin:
+      15px 0 22px;
+
+    font-size:
+      11px;
+
+    line-height:
+      1.65;
+  }
+
+
+  .AboutPageFour-youtubeButton {
+    height:
+      52px;
+
+    padding:
+      4px 17px 4px 5px;
+
+    font-size:
+      10px;
+  }
+
+
+  .AboutPageFour-youtubeButtonIcon {
+    width:
+      42px;
+
+    height:
+      42px;
+
+    font-size:
+      17px;
+  }
+
+
+  .AboutPageFour-youtubeVideo {
+    min-height:
+      230px;
+
+    border-radius:
+      18px;
+  }
+
+
+  .AboutPageFour-youtubePlay {
+    width:
+      73px;
+
+    height:
+      73px;
+  }
+
+
+  .AboutPageFour-youtubePlayOuter {
+    width:
+      53px;
+
+    height:
+      53px;
+  }
+
+
+  .AboutPageFour-youtubePlayInner {
+    width:
+      41px;
+
+    height:
+      41px;
+
+    font-size:
+      12px;
+  }
+
+
+  .AboutPageFour-youtubeBadge {
+    left:
+      13px;
+
+    top:
+      13px;
+
+    padding:
+      7px 10px;
+
+    font-size:
+      7px;
+  }
+
+
+  .AboutPageFour-youtubeBadge svg {
+    font-size:
+      12px;
+  }
+
+
+  .AboutPageFour-youtubeBottom {
+    left:
+      14px;
+
+    right:
+      14px;
+
+    bottom:
+      13px;
+  }
+
+
+  .AboutPageFour-youtubeBottom strong {
+    font-size:
+      13px;
+  }
+
+
+  .AboutPageFour-youtubeBottom span {
+    font-size:
+      7px;
+  }
+
+
+  .AboutPageFour-youtubeWatch {
+    padding:
+      7px 9px;
+
+    font-size:
+      7px;
+  }
+
+
+  .AboutPageFour-youtubeWatch svg {
+    font-size:
+      7px;
+  }
+
+
+  .AboutPageFour-youtubeCorner {
+    width:
+      30px;
+
+    height:
+      30px;
+  }
+
+
+  .AboutPageFour-youtubeCornerOne {
+    right:
+      13px;
+
+    top:
+      13px;
+  }
+
+
+  .AboutPageFour-youtubeCornerTwo {
+    left:
+      13px;
+
+    bottom:
+      13px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .AboutPageFour-container {
+    width:
+      calc(100% - 18px);
+  }
+
+
+  .AboutPageFour-title {
+    font-size:
+      28px;
+  }
+
+
+  .AboutPageFour-card {
+    min-height:
+      175px;
+  }
+
+
+  .AboutPageFour-youtube {
+    padding:
+      23px 16px 16px;
+  }
+
+
+  .AboutPageFour-youtubeTitle {
+    font-size:
+      26px;
+  }
+
+
+  .AboutPageFour-youtubeVideo {
+    min-height:
+      205px;
+  }
+
+
+  .AboutPageFour-youtubeBottom
+  .AboutPageFour-youtubeWatch {
+    display:
+      none;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .AboutPageFour *,
+  .AboutPageFour *::before,
+  .AboutPageFour *::after {
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+  }
+
+}

@@ -3,7 +3,11 @@ import BreadCrumMain from '../../Components/BreadCrumMain/BreadCrumMain'
 
 const About = () => {
   return (
-    <BreadCrumMain title="About Us" subtitle="Meet the people behind your Odisha Journey brand experience." />
+    <BreadCrumMain title="About Us" 
+    subtitle="Meet the people behind your Odisha Journey brand experience." 
+    />
+    
+    
   )
 }
 
