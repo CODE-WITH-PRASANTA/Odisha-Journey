@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import { href } from 'react-router-dom';
 
 const menu = [
   { label: 'Home', href: '/' },
   {
-    label: 'Travel Package',
+    label: 'Odisha Tour Travels',
     children: [
       'Golden Triangle (Puri-Konark-Bhubaneswar)',
       'Wildlife & Nature (Similipal/Bhitarkanika)',
@@ -12,10 +13,7 @@ const menu = [
       'Chilika Lake & Waterfalls'
     ],
   },
-  {
-    label: 'Visa',
-    children: ['Tourist Visa', 'Business Visa', 'Visa on Arrival'],
-  },
+  { label: 'Hotel' , href: '/hotel'},
   { label: 'About Us', href: '/about' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Blog', href: '/blog' },

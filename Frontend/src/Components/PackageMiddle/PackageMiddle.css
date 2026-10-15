@@ -1,0 +1,952 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap');
+
+/* =================================================================
+   PackageMiddle
+   NOTE: do not put overflow:hidden on any parent of this section,
+   it would break the sticky right-hand booking box.
+================================================================= */
+.PackageMiddle {
+  --pm-sticky-top: 80px; /* fallback only: JS sets the real value from your navbar */
+  --pm-orange: #ea580c;
+  --pm-orange-2: #f59e0b;
+  --pm-orange-tint: #fff1e8;
+  --pm-green: #12936b;
+  --pm-green-tint: #effcf6;
+  --pm-green-line: #bdeed8;
+  --pm-navy: #0b1530;
+  --pm-navy-2: #17306b;
+  --pm-ink: #0f172a;
+  --pm-text: #475569;
+  --pm-muted: #94a3b8;
+  --pm-line: #eceef2;
+  --pm-surface: #ffffff;
+  --pm-bg: #fafafb;
+  --pm-radius: 28px;
+  --pm-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  position: relative;
+  width: 100%;
+  padding: clamp(28px, 5vw, 64px) 0 clamp(48px, 7vw, 96px);
+  background:
+    radial-gradient(60% 40% at 100% 0%, rgba(245, 158, 11, 0.07), transparent 70%),
+    radial-gradient(50% 35% at 0% 20%, rgba(234, 88, 12, 0.05), transparent 70%),
+    var(--pm-bg);
+  color: var(--pm-text);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.PackageMiddle *,
+.PackageMiddle *::before,
+.PackageMiddle *::after {
+  box-sizing: border-box;
+}
+
+.PackageMiddle__container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 5vw, 80px);
+}
+
+/* ---------------------------- Layout ------------------------------ */
+.PackageMiddle__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(310px, 27vw, 400px);
+  gap: clamp(20px, 3vw, 40px);
+  align-items: start; /* required for sticky */
+}
+
+.PackageMiddle__main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.4vw, 32px);
+  min-width: 0;
+}
+
+/* ===================== STICKY RIGHT BOX ===================== */
+.PackageMiddle__aside {
+  position: sticky;
+  top: var(--pm-sticky-top);
+  align-self: start;
+  /* if the box is taller than the screen it scrolls inside itself */
+  max-height: calc(100vh - var(--pm-sticky-top) - 8px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* padding gives the shadows room so they are not cut off */
+  padding: 0 20px 36px;
+  margin: 0 -20px;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.PackageMiddle__aside::-webkit-scrollbar {
+  display: none;
+}
+
+.PackageMiddle__asideInner {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ---------------------------- Cards ------------------------------- */
+.PackageMiddle__card {
+  position: relative;
+  padding: clamp(22px, 3vw, 40px);
+  background: var(--pm-surface);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  border-radius: var(--pm-radius);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.03),
+    0 18px 50px -20px rgba(15, 23, 42, 0.1);
+}
+
+.PackageMiddle__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+
+.PackageMiddle__heading {
+  margin: 0;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--pm-ink);
+}
+
+.PackageMiddle__titleIcon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.PackageMiddle__titleIcon--orange {
+  color: var(--pm-orange);
+}
+
+.PackageMiddle__titleIcon--green {
+  color: #17b583;
+}
+
+.PackageMiddle__icon {
+  width: 22px;
+  height: 22px;
+}
+
+.PackageMiddle__text {
+  margin: 0;
+  max-width: 78ch;
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.8;
+  color: var(--pm-text);
+}
+
+.PackageMiddle__divider {
+  height: 1px;
+  margin: clamp(20px, 2.4vw, 30px) 0;
+  background: linear-gradient(90deg, var(--pm-line), rgba(236, 238, 242, 0.2));
+}
+
+/* ----------------------------- Stats ------------------------------ */
+.PackageMiddle__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 20px);
+}
+
+.PackageMiddle__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: clamp(16px, 2vw, 24px) 12px;
+  text-align: center;
+  background: linear-gradient(180deg, #fbfbfc, #f6f7f9);
+  border: 1px solid var(--pm-line);
+  border-radius: 22px;
+  transition:
+    transform 0.5s var(--pm-ease),
+    box-shadow 0.5s var(--pm-ease),
+    border-color 0.3s ease;
+}
+
+.PackageMiddle__stat:hover {
+  transform: translateY(-5px);
+  border-color: rgba(234, 88, 12, 0.25);
+  box-shadow: 0 18px 36px -18px rgba(234, 88, 12, 0.35);
+}
+
+.PackageMiddle__statIcon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+  border-radius: 16px;
+  color: var(--pm-orange);
+  background: linear-gradient(135deg, #ffe7d6, #ffeedf);
+  transition: transform 0.5s var(--pm-ease), background 0.3s ease, color 0.3s ease;
+}
+
+.PackageMiddle__stat:hover .PackageMiddle__statIcon {
+  transform: scale(1.08) rotate(-6deg);
+  color: #fff;
+  background: linear-gradient(135deg, var(--pm-orange), var(--pm-orange-2));
+}
+
+.PackageMiddle__statLabel {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pm-muted);
+}
+
+.PackageMiddle__statValue {
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  font-weight: 700;
+  color: var(--pm-ink);
+  text-wrap: balance;
+}
+
+/* --------------------------- Included ----------------------------- */
+.PackageMiddle__included {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.PackageMiddle__includedItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+  font-weight: 500;
+  line-height: 1.4;
+  color: #1f2937;
+  background: var(--pm-green-tint);
+  border: 1px solid var(--pm-green-line);
+  border-radius: 16px;
+  transition:
+    transform 0.45s var(--pm-ease),
+    box-shadow 0.45s var(--pm-ease),
+    background 0.3s ease;
+}
+
+.PackageMiddle__includedItem:hover {
+  transform: translateX(5px);
+  background: #e7faf0;
+  box-shadow: 0 14px 30px -18px rgba(18, 147, 107, 0.55);
+}
+
+.PackageMiddle__includedIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  color: #17b583;
+}
+
+.PackageMiddle__includedIcon .PackageMiddle__perkIcon {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------------------------- Itinerary --------------------------- */
+.PackageMiddle__days {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.PackageMiddle__day {
+  background: var(--pm-surface);
+  border: 1px solid var(--pm-line);
+  border-radius: 22px;
+  overflow: hidden;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.45s var(--pm-ease),
+    background 0.35s ease;
+}
+
+.PackageMiddle__day:hover {
+  border-color: rgba(234, 88, 12, 0.28);
+}
+
+.PackageMiddle__day--open {
+  border-color: rgba(234, 88, 12, 0.3);
+  box-shadow: 0 22px 44px -26px rgba(234, 88, 12, 0.5);
+}
+
+.PackageMiddle__dayButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 24px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.35s ease;
+}
+
+.PackageMiddle__day--open .PackageMiddle__dayButton {
+  background: linear-gradient(90deg, #fff4ec, #fffaf6 60%, #ffffff);
+}
+
+.PackageMiddle__dayButton:focus-visible {
+  outline: 2px solid var(--pm-orange);
+  outline-offset: -3px;
+  border-radius: 22px;
+}
+
+.PackageMiddle__dayBadge {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--pm-orange), var(--pm-orange-2));
+  box-shadow: 0 12px 22px -10px rgba(234, 88, 12, 0.7);
+  transition: transform 0.5s var(--pm-ease);
+}
+
+.PackageMiddle__dayButton:hover .PackageMiddle__dayBadge,
+.PackageMiddle__day--open .PackageMiddle__dayBadge {
+  transform: scale(1.06) rotate(-4deg);
+}
+
+.PackageMiddle__dayInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.PackageMiddle__dayLabel {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pm-orange);
+}
+
+.PackageMiddle__dayTitle {
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--pm-ink);
+}
+
+.PackageMiddle__chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--pm-muted);
+  transition: transform 0.5s var(--pm-ease), color 0.3s ease;
+}
+
+.PackageMiddle__day--open .PackageMiddle__chevron {
+  transform: rotate(180deg);
+  color: var(--pm-orange);
+}
+
+/* smooth height animation without JS measuring */
+.PackageMiddle__dayPanel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.55s var(--pm-ease);
+}
+
+.PackageMiddle__day--open .PackageMiddle__dayPanel {
+  grid-template-rows: 1fr;
+}
+
+.PackageMiddle__dayPanelInner {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 1px solid transparent;
+  transition: border-color 0.4s ease;
+}
+
+.PackageMiddle__day--open .PackageMiddle__dayPanelInner {
+  border-top-color: var(--pm-line);
+}
+
+.PackageMiddle__dayText {
+  margin: 0;
+  padding: 20px 26px 24px;
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+  line-height: 1.8;
+  color: var(--pm-text);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.4s ease, transform 0.55s var(--pm-ease);
+}
+
+.PackageMiddle__day--open .PackageMiddle__dayText {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.12s;
+}
+
+/* ------------------------------ Trust ----------------------------- */
+.PackageMiddle__trust {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 22px);
+}
+
+.PackageMiddle__trustItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: clamp(22px, 2.6vw, 32px) 18px;
+  text-align: center;
+  background: var(--pm-surface);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  border-radius: 24px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03), 0 14px 36px -22px rgba(15, 23, 42, 0.14);
+  transition: transform 0.5s var(--pm-ease), box-shadow 0.5s var(--pm-ease);
+}
+
+.PackageMiddle__trustItem:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 46px -24px rgba(234, 88, 12, 0.35);
+}
+
+.PackageMiddle__trustIcon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 16px;
+  color: var(--pm-orange);
+  background: linear-gradient(135deg, #ffe7d6, #ffeedf);
+  transition: transform 0.5s var(--pm-ease);
+}
+
+.PackageMiddle__trustItem:hover .PackageMiddle__trustIcon {
+  transform: translateY(-2px) scale(1.08);
+}
+
+.PackageMiddle__trustTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pm-ink);
+}
+
+.PackageMiddle__trustText {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--pm-muted);
+}
+
+/* ======================== BOOKING BOX ======================== */
+.PackageMiddle__booking {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(20px, 1.8vw, 26px);
+  border-radius: 26px;
+  color: #fff;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(245, 158, 11, 0.16), transparent 55%),
+    linear-gradient(160deg, var(--pm-navy) 0%, #11224d 55%, var(--pm-navy-2) 100%);
+  box-shadow:
+    0 2px 4px rgba(11, 21, 48, 0.16),
+    0 22px 38px -22px rgba(11, 21, 48, 0.55);
+}
+
+.PackageMiddle__bookingGlow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.35), transparent 70%);
+  filter: blur(8px);
+  animation: PackageMiddleGlow 6s ease-in-out infinite;
+}
+
+@keyframes PackageMiddleGlow {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.7; }
+  50% { transform: translate3d(-20px, 16px, 0) scale(1.15); opacity: 1; }
+}
+
+.PackageMiddle__eyebrow {
+  position: relative;
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.PackageMiddle__price {
+  position: relative;
+  margin: 0;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  font-size: clamp(1.9rem, 2.4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(90deg, #ff8a3d, #fbbf24);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.PackageMiddle__priceNote {
+  position: relative;
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.PackageMiddle__actions {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: clamp(16px, 1.6vw, 20px) 0;
+}
+
+.PackageMiddle__btn {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  transition:
+    transform 0.4s var(--pm-ease),
+    box-shadow 0.4s var(--pm-ease),
+    background 0.3s ease;
+}
+
+.PackageMiddle__btn:hover {
+  transform: translateY(-3px);
+}
+
+.PackageMiddle__btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.PackageMiddle__btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* light sweep on hover */
+.PackageMiddle__btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s var(--pm-ease);
+}
+
+.PackageMiddle__btn:hover::after {
+  left: 130%;
+}
+
+.PackageMiddle__btnIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.PackageMiddle__btn--whatsapp {
+  background: linear-gradient(90deg, #22c55e, #10a37f);
+  box-shadow: 0 12px 22px -12px rgba(34, 197, 94, 0.65);
+}
+
+.PackageMiddle__btn--call {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  letter-spacing: 0.04em;
+}
+
+.PackageMiddle__btn--call:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.PackageMiddle__btn--book {
+  background: linear-gradient(90deg, #ea580c, #f59e0b);
+  box-shadow: 0 14px 24px -12px rgba(234, 88, 12, 0.7);
+}
+
+.PackageMiddle__perks {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.PackageMiddle__perk {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.PackageMiddle__perkIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #2ddba0;
+}
+
+/* ------------------------ Destinations card ----------------------- */
+.PackageMiddle__destinations {
+  padding: 16px 18px 18px;
+  background: var(--pm-surface);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: 22px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03), 0 12px 24px -18px rgba(15, 23, 42, 0.2);
+}
+
+.PackageMiddle__destinationsTitle {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pm-ink);
+}
+
+.PackageMiddle__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.PackageMiddle__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1f2937;
+  background: #f3f4f7;
+  border: 1px solid var(--pm-line);
+  border-radius: 999px;
+  transition:
+    transform 0.4s var(--pm-ease),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.PackageMiddle__chip:hover {
+  transform: translateY(-3px);
+  color: var(--pm-orange);
+  background: var(--pm-orange-tint);
+  border-color: rgba(234, 88, 12, 0.3);
+}
+
+.PackageMiddle__chipIcon {
+  width: 14px;
+  height: 14px;
+  color: var(--pm-orange);
+}
+
+/* ------------------------ View all packages ----------------------- */
+.PackageMiddle__allPackages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 16px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1f2937;
+  background: #f1f2f5;
+  border: 1px solid var(--pm-line);
+  border-radius: 14px;
+  transition:
+    transform 0.4s var(--pm-ease),
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.4s var(--pm-ease);
+}
+
+.PackageMiddle__allPackages:hover {
+  color: #fff;
+  background: var(--pm-ink);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px -16px rgba(15, 23, 42, 0.6);
+}
+
+.PackageMiddle__allPackages:hover .PackageMiddle__btnIcon {
+  animation: PackageMiddleNudge 0.7s var(--pm-ease);
+}
+
+.PackageMiddle__allPackages:focus-visible {
+  outline: 2px solid var(--pm-orange);
+  outline-offset: 3px;
+}
+
+@keyframes PackageMiddleNudge {
+  0% { transform: translateX(0); }
+  40% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+/* ============================ Scroll reveal =======================
+   Uses a keyframe animation (not a transition) so the hover effects
+   of each card keep working normally after the reveal has finished. */
+.PackageMiddle__reveal {
+  opacity: 0;
+}
+
+.PackageMiddle__reveal--in {
+  opacity: 1;
+  animation: PackageMiddleReveal 1s var(--pm-ease) var(--d, 0s) backwards;
+}
+
+@keyframes PackageMiddleReveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 34px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* ============================ Responsive ========================== */
+
+/* Large desktops */
+@media (min-width: 1600px) {
+  .PackageMiddle__container {
+    max-width: 1560px;
+  }
+}
+
+/* Laptops */
+@media (max-width: 1199px) {
+  .PackageMiddle__grid {
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+  .PackageMiddle__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .PackageMiddle__btn {
+    font-size: 0.76rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Tablets and below: single column, booking box on top */
+@media (max-width: 991px) {
+  .PackageMiddle__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .PackageMiddle__aside {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    order: -1;
+    padding: 0;
+    margin: 0;
+  }
+  .PackageMiddle__asideInner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .PackageMiddle__actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .PackageMiddle__booking {
+    grid-column: 1 / -1;
+  }
+  .PackageMiddle__allPackages {
+    grid-column: 1 / -1;
+  }
+  .PackageMiddle__stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Large phones */
+@media (max-width: 767px) {
+  .PackageMiddle {
+    --pm-radius: 24px;
+  }
+  .PackageMiddle__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .PackageMiddle__asideInner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .PackageMiddle__actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .PackageMiddle__dayButton {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+  .PackageMiddle__dayText {
+    padding: 18px 20px 22px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 575px) {
+  .PackageMiddle__included {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .PackageMiddle__trust {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .PackageMiddle__trustItem {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: left;
+    column-gap: 16px;
+    row-gap: 2px;
+  }
+  .PackageMiddle__trustIcon {
+    margin: 0;
+    grid-row: span 2;
+  }
+  .PackageMiddle__trustTitle,
+  .PackageMiddle__trustText {
+    flex-basis: calc(100% - 70px);
+  }
+  .PackageMiddle__dayBadge {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-size: 14px;
+  }
+  .PackageMiddle__card {
+    border-radius: 22px;
+  }
+  .PackageMiddle__booking {
+    border-radius: 26px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 379px) {
+  .PackageMiddle__container {
+    padding: 0 12px;
+  }
+  .PackageMiddle__stats {
+    gap: 8px;
+  }
+  .PackageMiddle__stat {
+    padding: 14px 8px;
+  }
+  .PackageMiddle__statValue {
+    font-size: 0.84rem;
+  }
+  .PackageMiddle__btn {
+    font-size: 0.76rem;
+    padding: 0 12px;
+  }
+}
+
+/* Desktop sticky layout: extra top space so the content clears the navbar */
+@media (min-width: 992px) {
+  .PackageMiddle__booking {
+    padding-top: calc(clamp(20px, 1.8vw, 26px) + 16px);
+  }
+}
+
+/* Short laptop screens: allow the sticky box to be a bit tighter */
+@media (min-width: 992px) and (max-height: 760px) {
+  .PackageMiddle__asideInner {
+    gap: 10px;
+  }
+  .PackageMiddle__booking {
+    padding: 32px 18px 18px;
+  }
+  .PackageMiddle__actions {
+    gap: 8px;
+    margin: 14px 0;
+  }
+  .PackageMiddle__btn {
+    min-height: 44px;
+  }
+  .PackageMiddle__perks {
+    padding-top: 12px;
+    gap: 6px;
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .PackageMiddle__reveal,
+  .PackageMiddle__reveal--in {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .PackageMiddle__bookingGlow {
+    animation: none;
+  }
+  .PackageMiddle__dayPanel,
+  .PackageMiddle__dayText,
+  .PackageMiddle__chevron {
+    transition: none !important;
+  }
+  .PackageMiddle__btn::after {
+    display: none;
+  }
+}

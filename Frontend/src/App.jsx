@@ -18,6 +18,9 @@ import AboutPageThree from './Components/AboutPageThree/AboutPageThree'
 import AboutPageFour from './Components/AboutPageFour/AboutPageFour'
 import AboutPageFive from './Components/AboutPageFive/AboutPageFive'
 import AboutPageQuestion from './Components/AboutPageQuestion/AboutPageQuestion'
+import Hotel from './Pages/Hotel/Hotel'
+import BlogDetailsPage from './Pages/BlogDetailsPage/BlogDetailsPage'
+import Package from './Pages/Package/Package'
 
 function App() {
   const location = useLocation()
@@ -51,6 +54,9 @@ function App() {
           <Route path="/about-four" element={<AboutPageFour/>} />
           <Route path="/about-five" element={<AboutPageFive/>} />
           <Route path="/about-question" element={<AboutPageQuestion/>} />
+          <Route path="/hotel" element={<Hotel/>} />
+          <Route path="/blog-details-page" element={<BlogDetailsPage/>} />
+          <Route path="/Package" element={<Package/>} />
 
 
 
